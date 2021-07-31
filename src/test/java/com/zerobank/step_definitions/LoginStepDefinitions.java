@@ -11,13 +11,19 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.ro.Si;
 import org.junit.Assert;
 
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 public class LoginStepDefinitions {
 ZeroBankHomePage zeroBankHomePage = new ZeroBankHomePage();
 SignInPage signInPage = new SignInPage();
+WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
     @Given("user is on home page and clicks to sign in button")
     public void userIsOnHomePageAndClicksToSignInButton() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        wait.until(ExpectedConditions.visibilityOf(zeroBankHomePage.homePageSignInButton));
         zeroBankHomePage.homePageSignInButton.click();
     }
 

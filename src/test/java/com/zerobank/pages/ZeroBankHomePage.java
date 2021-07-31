@@ -10,6 +10,6 @@ public class ZeroBankHomePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id = "//button[@id='signin_button']")
+    @FindBy(xpath = "//button[@id='signin_button']")
     public WebElement homePageSignInButton;
 }
