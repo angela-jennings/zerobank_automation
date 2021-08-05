@@ -1,6 +1,10 @@
 package com.zerobank.utilities;
 
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BrowserUtils {
     public static void sleep(int second) {
@@ -17,5 +21,14 @@ public class BrowserUtils {
         String actualTitle = Driver.getDriver().getTitle();
 
         Assert.assertEquals(expectedTitle, actualTitle);
+    }
+
+    public static List<String> getElementsText(List<WebElement> webElementList){
+        //Create placeholder List<String>
+        List<String> actualAsString = new ArrayList<>();
+        for (WebElement each : webElementList) {
+            actualAsString.add(each.getText());
+        }
+        return actualAsString;
     }
 }

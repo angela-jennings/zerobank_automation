@@ -19,15 +19,6 @@ public class SignInPage {
     @FindBy(xpath = "//input[@type='submit']")
     public WebElement signInButton;
 
-    @FindBy(xpath = "//button[.='Back to safety']")
-    public WebElement backToSafetyButton;
-
-    @FindBy(xpath = "//button[@id='details-button']")
-    public WebElement advancedButton;
-
-    @FindBy(xpath = "//a[@id='proceed-link']")
-    public WebElement proceedToSiteLink;
-
     @FindBy(xpath = "//div[@class='alert alert-error']")
     public WebElement loginErrorMessage;
 }
